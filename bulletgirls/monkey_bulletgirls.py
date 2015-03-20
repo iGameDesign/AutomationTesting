@@ -1,0 +1,15 @@
+from com.android.monkeyrunner import MonkeyRunner, MonkeyDevice, MonkeyImage
+
+# device = MonkeyRunner.waitForConnection()
+print(1)
+device = MonkeyRunner.waitForConnection(5,"DU2SSE149P055486")
+print(2)
+device.installPackage("F:\\Downloads\\Bulletgirls.apk")
+print(3)
+device.startActivity(component = 'com.funova.bulletgirls')
+print(4)
+device.press('KEYCODE_MENU','DOWN_AND_UP')
+print(5)
+result = device.takeSnapshot()
+result.writeToFile('./shot1.png','png')
+print(6)
